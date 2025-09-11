@@ -22,5 +22,15 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addComponents }) {
+      addComponents({
+        ".active-link": {
+          borderBottomWidth: "2px",
+          borderColor: "#E1781F",
+          color: "#5C9DF5",
+        },
+      });
+    },
+  ],
 };
