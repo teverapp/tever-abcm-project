@@ -9,6 +9,8 @@ import LeftFlower from "./assets/LeftFlower.svg";
 import { useEffect, useState, useRef } from "react";
 import SecondLeftLeave from "./assets/SecondLeftLeave.svg";
 import SecondRightLeave from "./assets/SecondRightLeave.svg";
+import LeaveSection2a from "./assets/LeaveSection2a.svg";
+import LeaveSection2b from "./assets/LeaveSection2b.svg";
 //import LastMainPicture from "./assets/LastMainPicture.svg";
 function LandingPage() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -49,26 +51,26 @@ function LandingPage() {
 
   return (
     <>
-      <section className="w-full justify-center items-center flex flex-col gap-[2vw] sm:mt-[10vw] mt-[20vw] h-auto">
+      <section className="sm:px-0 px-[5vw] w-full justify-center mt-[20vw] items-center flex flex-col gap-[2vw] sm:mt-[10vw]">
         <div className="flex flex-col justify-center items-center">
           <div className="w-full h-auto py-4 gap-4 text-center">
-            <p className="font-poppins font-semibold text-2xl sm:text-7xl">
+            <p className="font-poppins font-semibold text-2xl sm:text-6xl">
               Healing minds with trust,
               <br /> hope, & faith-guided care.
             </p>
           </div>
           <div>
-            <p className="font-poppins text-base sm:text-xl text-[#616B66] text-center leading-[140%]">
+            <p className="font-poppins text-base sm:text-base text-[#616B66] text-center leading-[140%]">
               Bringing true healing by nurturing both mind and spirit through
               professional care, evidence-based treatment, and God’s word.
             </p>
           </div>
         </div>
         <div className="flex justify-center items-center flex-col sm:flex-row h-auto w-full gap-4">
-          <div className="flex justify-center cursor-pointer items-center rounded-[1000px] bg-[#5C9DF5] p-4 sm:text-base text-sm w-[50%] sm:w-[160px] h-[30px] sm:h-[48px] font-semibold text-[#1D201E]">
+          <div className="flex justify-center cursor-pointer items-center rounded-[1000px] bg-[#5C9DF5] p-2 w-[40vw] sm:w-[15vw] font-semibold text-[#1D201E]">
             Get Support
           </div>
-          <div className="flex justify-center cursor-pointer w-[50%] items-center rounded-[1000px] border-1 border-bg-[#1D201E] p-4 h-[30px] sm-[50%] sm:w-[160px] sm:h-[48px] font-semibold text-[#1D201E]">
+          <div className="flex justify-center cursor-pointer items-center rounded-[1000px] border-1 border-bg-[#1D201E] p-2 w-[40vw] sm:w-[15vw] font-semibold text-[#1D201E]">
             Donate
           </div>
         </div>
@@ -81,7 +83,7 @@ function LandingPage() {
           <img
             src={MainImage}
             alt="photo"
-            className="w-[80%] lg:w-[80%] rounded-[16px] border-radius-1"
+            className="w-[80%] rounded-[16px] ml-[-2vw] border-radius-1"
           />
           <img
             src={Leaves}
@@ -90,17 +92,20 @@ function LandingPage() {
           />
         </div>
       </section>
-      <section className="grid sm:px-[10vw] px-[5vw] grid-cols-1 w-full mt-[-30vw] sm:mt-0 gap-[10vw] sm:gap-[3vw] lg:h-[908px] justify-center items-center">
+      <section
+        id="about"
+        className="grid sm:px-[10vw] px-[5vw] grid-cols-1 w-full lg:mt-0 sm:mt-[10vw] gap-[10vw] sm:gap-[3vw] justify-center items-center mt-[-20vw]"
+      >
         <div className="gap-[2vw] grid sm:grid-cols-2 justify-center items-center w-full h-[50%]">
-          <img alt="picture" src={PictureLogo} className="w-full h-full" />
-          <div className="grid grid-cols-1 justify-center w-full h-full items-center py-[4vw] ">
+          <img alt="picture" src={PictureLogo} className="h-full w-full" />
+          <div className="grid grid-cols-1 justify-center w-full h-full items-center py-[4vw]">
             <div className="w-full h-auto">
-              <p className="text-[#1D201E] w-full font-poppins font-semibold text-2xl">
+              <p className="text-[#1D201E] w-full font-poppins font-semibold text-3xl">
                 Who we are
               </p>
             </div>
             <div className="grid grid-cols-1 justify-center sm:py-0 py-[2vw] items-center gap-[1vw]">
-              <p className="w-full font-poppins leading-[140%] text-[#616B66] text-sm sm:text-xl">
+              <p className="w-full font-poppins leading-[140%] text-[#616B66] text-sm sm:text-lg">
                 A Beautiful and Clear Mind (ABCM) Foundation is a faith-
                 <br />
                 driven mental health initiative committed to helping
@@ -111,7 +116,7 @@ function LandingPage() {
                 <br />
                 but with the right support, transformation is possible.
               </p>
-              <p className="w-full sm:text-xl text-sm font-poppins leading-[140%] text-[#616B66]">
+              <p className="w-full sm:text-lg text-sm font-poppins leading-[140%] text-[#616B66]">
                 Our foundation stands on the values of Healing, Trust, Faith,
                 <br />
                 and Community. We bring together evidence-based
@@ -124,12 +129,12 @@ function LandingPage() {
         <div className="gap-[2vw] grid grid-cols-2 justify-center items-center w-full h-[50%]">
           <div className="py-[5vw] grid grid-cols-1 justify-center w-full h-full items-center">
             <div className="w-full h-auto">
-              <p className="text-[#1D201E] w-full font-poppins font-semibold text-2xl">
+              <p className="text-[#1D201E] w-full font-poppins font-semibold text-3xl">
                 Mission & vision
               </p>
             </div>
             <div className="grid grid-cols-1 justify-center items-center gap-[1vw]">
-              <p className="w-full font-poppins text-sm break-words leading-[140%] text-[#616B66] sm:text-xl">
+              <p className="w-full font-poppins text-sm break-words leading-[140%] text-[#616B66] sm:text-lg">
                 <strong>Mission</strong>
                 <br />
                 Our mission is to focus on mind healing, build trust, and
@@ -142,7 +147,7 @@ function LandingPage() {
                 <br />
                 by integrity and excellence.
               </p>
-              <p className="w-full font-poppins text-sm break-words leading-[140%] text-[#616B66] sm:text-xl">
+              <p className="w-full font-poppins text-sm break-words leading-[140%] text-[#616B66] sm:text-lg">
                 <strong>Vission</strong>
                 <br />
                 We envision a world where everyone can access hope,
@@ -154,25 +159,38 @@ function LandingPage() {
           <img alt="picture" src={YellowFlower} className="w-full h-full" />
         </div>
       </section>
-      <section className="grid grid-cols-1 lg:h-[893px] px-[5vw] sm:px-[10vw] mt-[40vw] sm:mt-[23vw] justify-center items-center w-full gap-[3vw]">
-        <div>
+      <section
+        id="programs"
+        className="grid grid-cols-1 px-[5vw] mt-[40vw] sm:mt-[20vw] justify-center items-center w-full gap-[3vw]"
+      >
+        <div className="flex justify-center items-center w-full ">
           <img
-            alt="picture"
+            src={LeaveSection2a}
+            alt="photo"
+            className="w-[5%] sm:w-[10%] z-10 relative "
+          />
+          <img
             src={PeoplePicture}
-            className="lg:h-[30%] w-full"
+            alt="photo"
+            className="w-[80%] lg:w-[85%] rounded-[16px] border-radius-1  ml-[2vw] sm:ml-[4vw]"
+          />
+          <img
+            src={LeaveSection2b}
+            alt="photo"
+            className="w-[5%] lg:w-[10%] mt-[10vw] mr-[5vw]"
           />
         </div>
         <div className="flex flex-col justify-center text-center items-center w-full lg:h-[81px] gap-[1vw]">
           <p className="font-poppins font-semibold text-3xl text-[#1D201E]">
             What we do
           </p>
-          <p className="font-poppins text-lg text-[#616B66] leading-[140%] text-xl">
+          <p className="font-poppins text-lg text-[#616B66] leading-[140%]">
             We provide care that is holistic, compassionate, and faith-centered
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 w-full lg:h-[332px] gap-[2vw]">
           <div className="w-full h-full rounded-[16px] p-[4vw] sm:p-[1vw] bg-[#F4F5F5] items-center flex justify-center">
-            <p className="font-poppins break-words text-xl leading-[140%] text-[#616B66]">
+            <p className="font-poppins break-words text-lg leading-[140%] text-[#616B66]">
               <span className="block">
                 <strong>Counseling & therapy</strong>
               </span>
@@ -184,7 +202,7 @@ function LandingPage() {
             </p>
           </div>
           <div className="w-full h-full rounded-[16px] p-[4vw] sm:p-[1vw] bg-[#F4F5F5] items-center flex justify-center">
-            <p className="font-poppins break-words text-xl leading-[140%] text-[#616B66]">
+            <p className="font-poppins break-words text-lg leading-[140%] text-[#616B66]">
               <span className="block">
                 <strong>Support</strong>
               </span>
@@ -195,7 +213,7 @@ function LandingPage() {
             </p>
           </div>
           <div className="w-full h-full rounded-[16px] p-[4vw] sm:p-[1vw] bg-[#F4F5F5] items-center flex justify-center">
-            <p className="font-poppins break-words text-xl leading-[140%] text-[#616B66]">
+            <p className="font-poppins break-words text-lg leading-[140%] text-[#616B66]">
               <span className="block">
                 <strong>Faith & Wellness Integration</strong>
               </span>
@@ -206,7 +224,7 @@ function LandingPage() {
             </p>
           </div>
           <div className="w-full h-full rounded-[16px] p-[4vw] sm:p-[1vw] bg-[#F4F5F5] items-center flex justify-center">
-            <p className="font-poppins break-words text-xl leading-[140%] text-[#616B66]">
+            <p className="font-poppins break-words text-lg leading-[140%] text-[#616B66]">
               <span className="block">
                 <strong>Education & Awareness</strong>
               </span>
@@ -219,14 +237,17 @@ function LandingPage() {
           </div>
         </div>
       </section>
-      <section className="flex w-full px-[1vw] sm:px-[4vw] lg:h-[428px] mt-[10vw] m-auto lg:mx-auto lg:mt-[20vw] items-center justify-center rounded-[16px]">
+      <section
+        id="testimonials"
+        className="flex w-full px-[1vw] sm:px-[1vw] mt-[10vw] m-auto lg:mt-0 lg:mx-auto items-center justify-center rounded-[16px]"
+      >
         <img
           src={RightFlower}
           alt="picture"
-          className="lg:mt-[30%] lg:w-[30vw] sm:mt-[40vw] mt-[110%] z-10 w-[30%] mr-[-15%]"
+          className="lg:mt-[38%] lg:w-[20vw] sm:mt-[10vw] mt-[110%] z-10 w-[30%] mr-[-15%]"
         />
-        <div className="py-[2vw] gap-[3vw] w-[60%] flex justify-center items-center flex-col sm:w-full h-full rounded-[16px] bg-[#F5EBDD]">
-          <p className="font-poppins lg:text-4xl text-2xl font-semibold text-[#1D201E]">
+        <div className="py-[2vw] sm:p-[4vw] gap-[3vw] w-[60vw] flex justify-center items-center flex-col sm:w-[80vw] h-full rounded-[16px] bg-[#F5EBDD] lg:ml-[5vw]">
+          <p className="font-poppins lg:text-4xl text-3xl font-semibold text-[#1D201E]">
             Testimonals
           </p>
           <div className="rounded-[16px] gap-[2vw] grid lg:grid-cols-2 grid-cols-1 w-[90%] lg:h-[180px]">
@@ -249,10 +270,13 @@ function LandingPage() {
         <img
           src={LeftFlower}
           alt="picture"
-          className="lg:mb-[30%] lg:w-[30vw] sm:mb-[50%] mb-[120%] z-10 w-[30%] sm:ml-[-10%] ml-[-12%]"
+          className="lg:mb-[30%] lg:w-[20vw] sm:mb-[30%] mb-[110%] z-10 w-[30%] sm:ml-[-10%] ml-[-12%]"
         />
       </section>
-      <section className="gap-[5vw] sm:gap-[3vw] grid px-[5vw] justify-center items-center grid-cols-1 w-full lg:h-[365px] mt-[10vw]">
+      <section
+        id="donate"
+        className="gap-[5vw] sm:gap-[3vw] grid px-[5vw] justify-center items-center grid-cols-1 w-full"
+      >
         <div className="lg:h-[81px] text-center gap-[1vw] flex justify-center items-center flex-col w-full">
           <span className="text-[#1D201E] font-poppins font-semibold text-3xl">
             Be part of a healing community
@@ -293,19 +317,22 @@ function LandingPage() {
           </p>
         </div>
       </section>
-      <section className="gap-[2vw] hidden w-full mt-[10vw] lg:h-[500px] lg:grid lg:grid-cols-3 px-[10vw]">
+      <section
+        id="resources"
+        className="gap-[2vw] hidden w-full mt-[10vw] lg:grid lg:grid-cols-3 px-[10vw]"
+      >
         <div
-          className="py-[1vw] px-[2vw] w-full h-full rounded-[16px] 
-               bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(20,20,20,1)_100%),url('./FirstPicture.jpg')] 
+          className="py-[1vw] px-[2vw] w-full h-[30vw] rounded-[16px] 
+               bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(20,20,20,1)_100%),url('/FirstPicture.jpg')] 
                bg-cover bg-center flex flex-col justify-end"
         >
           <div className="flex z-10 flex-col gap-[1vw] w-full h-fit ">
-            <span className="font-poppins text-base sm:text-xl leading-[140%] text-white">
+            <span className="font-poppins text-base leading-[140%] text-white">
               Downloadable guides, such as “Managing Stress & Anxiety with
               Faith”
             </span>
             <div className="lg:w-[210px] h-[40%] cursor-pointer bg-white rounded-[1000px] border-1px border-[#1D201E] p-[1vw] flex justify-center items-center">
-              <p className="font-semibold text-base sm:text-xl font-[#1D201E]">
+              <p className="font-semibold text-base font-[#1D201E]">
                 Access guides
               </p>
             </div>
@@ -313,15 +340,15 @@ function LandingPage() {
         </div>
         <div
           className="py-[1vw] px-[2vw] w-full h-full rounded-[16px] 
-               bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(20,20,20,1)_100%),url('./SecondPicture.jpg')] 
+               bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(20,20,20,1)_100%),url('/SecondPicture.jpg')] 
                bg-cover bg-center flex flex-col justify-end"
         >
           <div className="flex z-10 flex-col gap-[1vw] w-full h-fit ">
-            <span className="font-poppins text-base sm:text-xl leading-[140%] text-white">
+            <span className="font-poppins text-base leading-[140%] text-white">
               Articles on mental health and Christian living
             </span>
             <div className="lg:w-[210px] h-[40%] cursor-pointer bg-white rounded-[1000px] border-1px border-[#1D201E] p-[1vw] flex justify-center items-center">
-              <p className="font-semibold text-base sm:text-xl font-[#1D201E]">
+              <p className="font-semibold text-base font-[#1D201E]">
                 Read articles
               </p>
             </div>
@@ -329,15 +356,15 @@ function LandingPage() {
         </div>
         <div
           className="py-[1vw] px-[2vw] w-full h-full rounded-[16px] 
-               bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(20,20,20,1)_100%),url('./ThirdPicture.jpg')] 
+               bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(20,20,20,1)_100%),url('/ThirdPicture.jpg')] 
                bg-cover bg-center flex flex-col justify-end"
         >
           <div className="flex z-10 flex-col gap-[1vw] w-full h-fit ">
-            <span className="font-poppins text-base sm:text-xl leading-[140%] text-white">
+            <span className="font-poppins text-base leading-[140%] text-white">
               Information on helplines and crisis support services
             </span>
             <div className="lg:w-[210px] h-[40%] cursor-pointer bg-white rounded-[1000px] border-1px border-[#1D201E] p-[1vw] flex justify-center items-center">
-              <p className="font-semibold text-base sm:text-xl font-[#1D201E]">
+              <p className="font-semibold text-base font-[#1D201E]">
                 Get support
               </p>
             </div>
@@ -346,6 +373,7 @@ function LandingPage() {
       </section>
       <section className="w-full mt-[10vw] lg:h-[500px] px-[10vw] lg:hidden">
         <div
+          id="resourcePhone"
           ref={scrollRef}
           className="flex gap-[4vw] overflow-x-auto snap-x snap-mandatory scrollbar-hide"
         >
@@ -372,7 +400,7 @@ function LandingPage() {
             </div>
           ))}
         </div>
-        <div className="flex justify-center gap-2 mt-4">
+        <div id="resources" className="flex justify-center gap-2 mt-4">
           {picturePlate.map((_, index) => (
             <span
               key={index}
@@ -383,7 +411,10 @@ function LandingPage() {
           ))}
         </div>
       </section>
-      <section className="mb-[10vw] w-full mt-[10%] lg:h-[1026px] flex justify-center px-[5vw] lg:px-0 items-center gap-[10vw] flex-col">
+      <section
+        id="contact"
+        className="mb-[10vw] w-full mt-[10%] flex justify-center px-[5vw] lg:px-0 items-center gap-[10vw] flex-col"
+      >
         <div className="h-full w-full grid grid-cols-1">
           <div className="flex justify-center">
             <img
@@ -394,7 +425,7 @@ function LandingPage() {
             <img
               alt="picture"
               src={"./LastPicture.jpg"}
-              className="w-[250px] lg:w-full lg:h-[500px] sm:h-[300px] sm:w-[90%] h-[130px] rounded-[16px] mr-[-1vw]"
+              className="w-[90vw] lg:w-full sm:w-[90%] h-[30vw] rounded-[16px] mr-[-1vw]"
             />
             <img
               alt="picture"
@@ -406,12 +437,12 @@ function LandingPage() {
             <p className="font-poppins font-semibold text-2xl sm:text-3xl text-[#1D201E]">
               We’re here for you
             </p>
-            <p className="font-poppins text-sm px-[3vw] sm:text-lg text-[#616B66] leading-[140%] text-xl">
+            <p className="font-poppins text-sm px-[3vw] sm:text-lg text-[#616B66] leading-[140%]">
               Whether you need support, want to volunteer, or would like to
               partner with us, we’d love to hear from you.
             </p>
           </div>
-          <div className="m-auto lg:p-[1vw] w-full lg:w-[550px] flex justify-center items-center lg:h-[465px]">
+          <div className="m-auto lg:p-[1vw] w-full lg:w-[30vw] flex justify-center items-center lg:h-[465px]">
             <form
               action="/submit"
               method="POST"
