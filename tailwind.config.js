@@ -6,6 +6,8 @@ export default {
       colors: {
         primary: "#49504C",
         secondary: "#5C9DF5",
+        brandOrange: "#E1781F",
+        brandBlue: "#5C9DF5",
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
@@ -22,15 +24,5 @@ export default {
       },
     },
   },
-  plugins: [
-    function ({ addComponents }) {
-      addComponents({
-        ".active-link": {
-          borderBottomWidth: "2px",
-          borderColor: "#E1781F",
-          color: "#5C9DF5",
-        },
-      });
-    },
-  ],
+  plugins: [],
 };

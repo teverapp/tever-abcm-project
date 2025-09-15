@@ -11,7 +11,7 @@ import SecondLeftLeave from "./assets/SecondLeftLeave.svg";
 import SecondRightLeave from "./assets/SecondRightLeave.svg";
 import LeaveSection2a from "./assets/LeaveSection2a.svg";
 import LeaveSection2b from "./assets/LeaveSection2b.svg";
-//import LastMainPicture from "./assets/LastMainPicture.svg";
+import { Link } from "react-scroll";
 function LandingPage() {
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement | null>(null);
@@ -51,7 +51,7 @@ function LandingPage() {
 
   return (
     <>
-      <section className="sm:px-0 px-[5vw] w-full justify-center mt-[20vw] items-center flex flex-col gap-[2vw] sm:mt-[10vw]">
+      <section className="sm:px-0 px-[3vw] w-full justify-center mt-[20vw] items-center flex flex-col gap-[2vw] sm:mt-[10vw]">
         <div className="flex flex-col justify-center items-center">
           <div className="w-full h-auto py-4 gap-4 text-center">
             <p className="font-poppins font-semibold text-2xl sm:text-6xl">
@@ -67,12 +67,18 @@ function LandingPage() {
           </div>
         </div>
         <div className="flex justify-center items-center flex-col sm:flex-row h-auto w-full gap-4">
-          <div className="flex justify-center cursor-pointer items-center rounded-[1000px] bg-[#5C9DF5] p-2 w-[40vw] sm:w-[15vw] font-semibold text-[#1D201E]">
+          <Link
+            to={"get-support"}
+            className="flex justify-center cursor-pointer items-center rounded-[1000px] bg-[#5C9DF5] p-2 w-[40vw] sm:w-[15vw] font-semibold text-[#1D201E]"
+          >
             Get Support
-          </div>
-          <div className="flex justify-center cursor-pointer items-center rounded-[1000px] border-1 border-bg-[#1D201E] p-2 w-[40vw] sm:w-[15vw] font-semibold text-[#1D201E]">
+          </Link>
+          <Link
+            to={"contact"}
+            className="flex justify-center cursor-pointer items-center rounded-[1000px] border-1 border-bg-[#1D201E] p-2 w-[40vw] sm:w-[15vw] font-semibold text-[#1D201E]"
+          >
             Donate
-          </div>
+          </Link>
         </div>
         <div className="flex gap-[-5vw] justify-center items-center w-full ">
           <img
@@ -94,7 +100,7 @@ function LandingPage() {
       </section>
       <section
         id="about"
-        className="grid sm:px-[10vw] px-[5vw] grid-cols-1 w-full lg:mt-0 sm:mt-[10vw] gap-[10vw] sm:gap-[3vw] justify-center items-center mt-[-20vw]"
+        className="grid sm:px-[10vw] px-[5vw] grid-cols-1 w-full gap-[10vw] sm:gap-[3vw] justify-center items-center"
       >
         <div className="gap-[2vw] grid sm:grid-cols-2 justify-center items-center w-full h-[50%]">
           <img alt="picture" src={PictureLogo} className="h-full w-full" />
@@ -161,7 +167,7 @@ function LandingPage() {
       </section>
       <section
         id="programs"
-        className="grid grid-cols-1 px-[5vw] mt-[40vw] sm:mt-[20vw] justify-center items-center w-full gap-[3vw]"
+        className="grid grid-cols-1 px-[5vw] mt-[40vw] sm:mt-[5vw] sm:pt-[10vw] justify-center items-center w-full gap-[3vw]"
       >
         <div className="flex justify-center items-center w-full ">
           <img
@@ -239,12 +245,12 @@ function LandingPage() {
       </section>
       <section
         id="testimonials"
-        className="flex w-full px-[1vw] sm:px-[1vw] mt-[10vw] m-auto lg:mt-0 lg:mx-auto items-center justify-center rounded-[16px]"
+        className="flex w-full px-[1vw] sm:px-[1vw] mt-[10vw] lg:mt-[-3vw] lg:pt-[2vw] items-center justify-center rounded-[16px]"
       >
         <img
           src={RightFlower}
           alt="picture"
-          className="lg:mt-[38%] lg:w-[20vw] sm:mt-[10vw] mt-[110%] z-10 w-[30%] mr-[-15%]"
+          className="lg:mt-[30vw] lg:w-[20vw] sm:mt-[10vw] mt-[110vw] z-10 w-[30%] mr-[-15%]"
         />
         <div className="py-[2vw] sm:p-[4vw] gap-[3vw] w-[60vw] flex justify-center items-center flex-col sm:w-[80vw] h-full rounded-[16px] bg-[#F5EBDD] lg:ml-[5vw]">
           <p className="font-poppins lg:text-4xl text-3xl font-semibold text-[#1D201E]">
@@ -270,12 +276,12 @@ function LandingPage() {
         <img
           src={LeftFlower}
           alt="picture"
-          className="lg:mb-[30%] lg:w-[20vw] sm:mb-[30%] mb-[110%] z-10 w-[30%] sm:ml-[-10%] ml-[-12%]"
+          className="lg:mb-[30vw] lg:w-[20vw] sm:mb-[30%] mb-[110vw] z-10 w-[30%] sm:ml-[-10%] ml-[-12%]"
         />
       </section>
       <section
-        id="donate"
-        className="gap-[5vw] sm:gap-[3vw] grid px-[5vw] justify-center items-center grid-cols-1 w-full"
+        id="get-support"
+        className="gap-[5vw] sm:gap-[3vw] grid px-[5vw] mt-[-7vw] pt-[7vw] justify-center items-center grid-cols-1 w-full"
       >
         <div className="lg:h-[81px] text-center gap-[1vw] flex justify-center items-center flex-col w-full">
           <span className="text-[#1D201E] font-poppins font-semibold text-3xl">
@@ -312,14 +318,17 @@ function LandingPage() {
           </div>
         </div>
         <div className="mx-auto lg:w-[200px] flex justify-center items-center h-auto p-[3vw] sm:p-[1vw] gap-[8px] rounded-[1000px] bg-[#5C9DF5]">
-          <p className="font-poppins cursor-pointer font-semibold text-base font-[#1D201E]">
+          <Link
+            to={"form"}
+            className="font-poppins cursor-pointer font-semibold text-base font-[#1D201E]"
+          >
             Join community
-          </p>
+          </Link>
         </div>
       </section>
       <section
         id="resources"
-        className="gap-[2vw] hidden w-full mt-[10vw] lg:grid lg:grid-cols-3 px-[10vw]"
+        className="gap-[2vw] hidden w-full mt-[5vw] pt-[5vw] lg:grid lg:grid-cols-3 px-[10vw]"
       >
         <div
           className="py-[1vw] px-[2vw] w-full h-[30vw] rounded-[16px] 
@@ -413,7 +422,7 @@ function LandingPage() {
       </section>
       <section
         id="contact"
-        className="mb-[10vw] w-full mt-[10%] flex justify-center px-[5vw] lg:px-0 items-center gap-[10vw] flex-col"
+        className="w-full mt-[0vw] py-[7vw] flex justify-center px-[5vw] lg:px-0 items-center flex-col"
       >
         <div className="h-full w-full grid grid-cols-1">
           <div className="flex justify-center">
@@ -433,7 +442,10 @@ function LandingPage() {
               className="lg:w-[150px] h-[60px] w-[60px] lg:h-[150px] sm:w-[15vw] mt-[15vw] mr-[4vw]"
             />
           </div>
-          <div className="flex flex-col justify-center text-center items-center w-full lg:h-[81px] gap-[1vw] my-[2vw]">
+          <div
+            id="form"
+            className="flex flex-col justify-center text-center items-center w-full gap-[1vw]  pt-[6vw] pb-[4vw]"
+          >
             <p className="font-poppins font-semibold text-2xl sm:text-3xl text-[#1D201E]">
               We’re here for you
             </p>

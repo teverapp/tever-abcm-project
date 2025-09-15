@@ -18,7 +18,10 @@ function Footer() {
 
   return (
     <>
-      <section className="flex justify-center items-center bg-[#FAFAFA] px-[5vw] sm:px-[5vw] w-full lg:h-[25vw]">
+      <section
+        id="footer"
+        className="flex justify-center items-center bg-[#FAFAFA] px-[5vw] sm:px-[5vw] w-full lg:h-[25vw]"
+      >
         <div className="flex w-full h-full flex-col gap-[5vw] sm:gap-[3vw] justify-center items-center">
           <div className="flex sm:justify-between w-full lg:h-[202px] flex-col sm:flex-row">
             <div className="flex w-full sm:w-[70%] h-full gap-[2vw] flex-col">
