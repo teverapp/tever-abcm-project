@@ -3,7 +3,8 @@ import ABCMlogo from "./assets/ABCMlogo.svg";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-scroll";
 import { scroller } from "react-scroll";
-
+import { motion } from "framer-motion";
+//import { useLocation } from "react-router-dom";
 function Navigationbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [active, setActive] = useState("");
@@ -42,11 +43,26 @@ function Navigationbar() {
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
-          <img
-            src={ABCMlogo}
-            className="sm:w-[80px] md:w-[95px] lg:w-[110px] xl:w-[130px] w-[70px] h-auto mr-[3vw]"
-            alt="ABCM logo"
-          />
+          <Link
+            to="pageTop"
+            smooth={true}
+            duration={500}
+            offset={-50}
+            spy={true}
+          >
+            <motion.img
+              whileHover={{
+                scale: 1.1,
+              }}
+              transition={{
+                duration: 0.3,
+                ease: "easeInOut",
+              }}
+              src={ABCMlogo}
+              className="sm:w-[80px] md:w-[95px] cursor-pointer lg:w-[110px] xl:w-[130px] w-[70px] h-auto mr-[3vw]"
+              alt="ABCM logo"
+            />
+          </Link>
           {sections.map((item, index) => (
             <Link
               key={index}
@@ -64,14 +80,20 @@ function Navigationbar() {
             </Link>
           ))}
         </div>
-        <div
+        <motion.div
+          animate={{ scale: [1, 1.1, 1] }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
           onClick={scrollToDonate}
           className="hover:bg-[#E1781F] text-center rounded-[1000px] p-2 gap-2 lg:w-[10vw] bg-[#5C9DF5]"
         >
           <p className="font-poppins cursor-pointer font-semibold sm:text-base text-sm ">
             Donate
           </p>
-        </div>
+        </motion.div>
       </nav>
       {isOpen && (
         <div className="lg:hidden absolute top-[12vw] fixed z-50 left-0 w-full bg-white shadow-md flex flex-col items-start px-[10vw] py-4 gap-1 z-40">
