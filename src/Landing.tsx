@@ -11,9 +11,15 @@ import SecondLeftLeave from "./assets/SecondLeftLeave.svg";
 import SecondRightLeave from "./assets/SecondRightLeave.svg";
 import LeaveSection2a from "./assets/LeaveSection2a.svg";
 import LeaveSection2b from "./assets/LeaveSection2b.svg";
+import { motion } from "framer-motion";
+//import { useInView } from "react-intersection-observer";
 import { Link } from "react-scroll";
 function LandingPage() {
   const [activeIndex, setActiveIndex] = useState(0);
+  /*const { ref, inView } = useInView({
+    threshold: 0.3,
+  });*/
+
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const picturePlate = [
@@ -51,7 +57,10 @@ function LandingPage() {
 
   return (
     <>
-      <section className="sm:px-0 px-[3vw] w-full justify-center mt-[20vw] items-center flex flex-col gap-[2vw] sm:mt-[10vw]">
+      <section
+        id="pageTop"
+        className="sm:px-0 w-full justify-center mt-[20vw] items-center flex flex-col gap-[2vw] pt-0 sm:pt-[10vw] sm:mt-0"
+      >
         <div className="flex flex-col justify-center items-center">
           <div className="w-full h-auto py-4 gap-4 text-center">
             <p className="font-poppins font-semibold text-2xl sm:text-6xl">
@@ -60,56 +69,117 @@ function LandingPage() {
             </p>
           </div>
           <div>
-            <p className="font-poppins text-base sm:text-base text-[#616B66] text-center leading-[140%]">
+            <p className="font-poppins text-base sm:text-base text-[#616B66] text-center px-[2vw] sm:px-0 leading-[140%]">
               Bringing true healing by nurturing both mind and spirit through
               professional care, evidence-based treatment, and God’s word.
             </p>
           </div>
         </div>
-        <div className="flex justify-center items-center flex-col sm:flex-row h-auto w-full gap-4">
-          <Link
-            to={"get-support"}
-            className="flex justify-center cursor-pointer items-center rounded-[1000px] bg-[#5C9DF5] p-2 w-[40vw] sm:w-[15vw] font-semibold text-[#1D201E]"
+        <div className="flex justify-center items-center flex-col sm:flex-row h-auto w-full gap-4 sm:gap-[5vw]">
+          <motion.div
+            whileHover={{
+              scale: 1.1,
+            }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+            }}
           >
-            Get Support
-          </Link>
-          <Link
-            to={"contact"}
-            className="flex justify-center cursor-pointer items-center rounded-[1000px] border-1 border-bg-[#1D201E] p-2 w-[40vw] sm:w-[15vw] font-semibold text-[#1D201E]"
+            <Link
+              to={"get-support"}
+              className="flex justify-center cursor-pointer items-center rounded-[1000px] bg-[#5C9DF5] p-2 w-[40vw] sm:w-[15vw] font-semibold text-[#1D201E]"
+            >
+              Get Support
+            </Link>
+          </motion.div>
+          <motion.div
+            whileHover={{
+              scale: 1.1,
+            }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+            }}
           >
-            Donate
-          </Link>
+            <Link
+              to={"contact"}
+              className="flex justify-center cursor-pointer items-center rounded-[1000px] border-1 border-bg-[#1D201E] p-2 w-[40vw] sm:w-[15vw] font-semibold text-[#1D201E]"
+            >
+              Donate
+            </Link>
+          </motion.div>
         </div>
-        <div className="flex gap-[-5vw] justify-center items-center w-full ">
-          <img
+        <div className="flex justify-center items-center w-full relative">
+          <motion.img
             src={LeaveLeft}
             alt="photo"
-            className="w-[10%] z-10 relative mr-[-1vw]"
+            className="w-[10vw] mt-[35vw] sm:mt-0 relative z-10 mr-[-15vw] sm:mr-[-1vw]"
+            animate={{ x: [-10, 10, -10] }}
+            transition={{
+              duration: 1,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
           />
-          <img
+          <motion.img
             src={MainImage}
             alt="photo"
-            className="w-[80%] rounded-[16px] ml-[-2vw] border-radius-1"
+            className="w-full sm:w-[80vw] sm:rounded-[16px] sm:ml-[-2vw]"
+            whileHover={{
+              scale: 1.1,
+            }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+            }}
           />
-          <img
+          <motion.img
             src={Leaves}
             alt="photo"
-            className="w-[10%] ml-[-3vw] mt-[10vw]"
+            className="w-[10vw] ml-[-15vw] sm:ml-[-3vw] mt-[35vw] sm:mt-[10vw]"
+            animate={{ x: [10, -10, 10] }} // opposite direction for variety
+            transition={{
+              duration: 1,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
           />
         </div>
       </section>
       <section
         id="about"
-        className="grid sm:px-[10vw] px-[5vw] grid-cols-1 w-full gap-[10vw] sm:gap-[3vw] justify-center items-center"
+        className="grid sm:px-[10vw] grid-cols-1 w-full pt-[5vw] sm:gap-[3vw] justify-center items-center"
       >
-        <div className="gap-[2vw] grid sm:grid-cols-2 justify-center items-center w-full h-[50%]">
-          <img alt="picture" src={PictureLogo} className="h-full w-full" />
-          <div className="grid grid-cols-1 justify-center w-full h-full items-center py-[4vw]">
-            <div className="w-full h-auto">
+        <div className="gap-[2vw] sm:gap-[3vw] grid sm:grid-cols-2 justify-center items-center w-full">
+          <motion.img
+            alt="picture"
+            src={PictureLogo}
+            className="h-full w-full"
+          />
+          <motion.div
+            whileHover={{
+              scale: 1.1,
+            }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+            }}
+            className="grid grid-cols-1 text-center sm:text-start justify-center w-full h-full items-center py-[4vw]"
+          >
+            <motion.div
+              whileHover={{
+                scale: 1.1,
+              }}
+              transition={{
+                duration: 0.3,
+                ease: "easeInOut",
+              }}
+              className="w-full h-auto"
+            >
               <p className="text-[#1D201E] w-full font-poppins font-semibold text-3xl">
                 Who we are
               </p>
-            </div>
+            </motion.div>
             <div className="grid grid-cols-1 justify-center sm:py-0 py-[2vw] items-center gap-[1vw]">
               <p className="w-full font-poppins leading-[140%] text-[#616B66] text-sm sm:text-lg">
                 A Beautiful and Clear Mind (ABCM) Foundation is a faith-
@@ -130,10 +200,31 @@ function LandingPage() {
                 <br /> recovery and growth.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
-        <div className="gap-[2vw] grid grid-cols-2 justify-center items-center w-full h-[50%]">
-          <div className="py-[5vw] grid grid-cols-1 justify-center w-full h-full items-center">
+        <div className="gap-[2vw] grid grid-cols-1 sm:grid-cols-2 justify-center items-center w-full">
+          <motion.img
+            alt="picture"
+            whileHover={{
+              scale: 1.1,
+            }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+            }}
+            src={YellowFlower}
+            className="w-full sm:hidden block h-full"
+          />
+          <motion.div
+            whileHover={{
+              scale: 1.1,
+            }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+            }}
+            className="py-[5vw] grid text-center sm:text-start grid-cols-1 justify-center w-full h-full items-center"
+          >
             <div className="w-full h-auto">
               <p className="text-[#1D201E] w-full font-poppins font-semibold text-3xl">
                 Mission & vision
@@ -154,39 +245,69 @@ function LandingPage() {
                 by integrity and excellence.
               </p>
               <p className="w-full font-poppins text-sm break-words leading-[140%] text-[#616B66] sm:text-lg">
-                <strong>Vission</strong>
+                <strong>Vision</strong>
                 <br />
                 We envision a world where everyone can access hope,
                 <br />
                 healing, health, trust, confidentiality, recovery, and faith.
               </p>
             </div>
-          </div>
-          <img alt="picture" src={YellowFlower} className="w-full h-full" />
+          </motion.div>
+          <motion.img
+            alt="picture"
+            whileHover={{
+              scale: 1.1,
+            }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+            }}
+            src={YellowFlower}
+            className="w-full sm:flex hidden h-full"
+          />
         </div>
       </section>
       <section
         id="programs"
-        className="grid grid-cols-1 px-[5vw] mt-[40vw] sm:mt-[5vw] sm:pt-[10vw] justify-center items-center w-full gap-[3vw]"
+        className="grid grid-cols-1 sm:px-[5vw] sm:pt-[5vw] justify-center items-center w-full sm:gap-[3vw]"
       >
         <div className="flex justify-center items-center w-full ">
-          <img
+          <motion.img
+            animate={{ x: [10, -10, 10] }}
+            transition={{
+              duration: 1,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
             src={LeaveSection2a}
             alt="photo"
-            className="w-[5%] sm:w-[10%] z-10 relative "
+            className="w-[10vw] sm:w-[10%] z-10 relative sm:mb-0 sm:mr-[-5vw] mb-[50vw] mr-[-15vw]"
           />
-          <img
+          <motion.img
             src={PeoplePicture}
+            whileHover={{
+              scale: 1.1,
+            }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+            }}
             alt="photo"
-            className="w-[80%] lg:w-[85%] rounded-[16px] border-radius-1  ml-[2vw] sm:ml-[4vw]"
+            className="w-full sm:w-[85%] sm:rounded-[16px] border-radius-1 sm:ml-[4vw] ml-[2vw]"
           />
-          <img
+          <motion.img
+            animate={{ x: [-10, 10, -10] }}
+            transition={{
+              duration: 1,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
             src={LeaveSection2b}
             alt="photo"
-            className="w-[5%] lg:w-[10%] mt-[10vw] mr-[5vw]"
+            className="w-[7vw] sm:w-[10%] z-10 relative mt-[45vw] sm:mt-[10vw] sm:ml-0 ml-[-11vw] sm:mr-[5vw]"
           />
         </div>
-        <div className="flex flex-col justify-center text-center items-center w-full lg:h-[81px] gap-[1vw]">
+        <div className="flex flex-col justify-center pb-[5vw] sm:pb-0 sm:px-0 px-[2vw] text-center items-center w-full lg:h-[81px] gap-[1vw]">
           <p className="font-poppins font-semibold text-3xl text-[#1D201E]">
             What we do
           </p>
@@ -194,8 +315,17 @@ function LandingPage() {
             We provide care that is holistic, compassionate, and faith-centered
           </p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 w-full lg:h-[332px] gap-[2vw]">
-          <div className="w-full h-full rounded-[16px] p-[4vw] sm:p-[1vw] bg-[#F4F5F5] items-center flex justify-center">
+        <div className="grid grid-cols-1 text-center sm:text-start lg:grid-cols-2 w-full lg:h-[332px] gap-[2vw] sm:gap-[3vw]">
+          <motion.div
+            whileHover={{
+              scale: 1.1,
+            }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+            }}
+            className="w-full h-full sm:rounded-[16px] p-[4vw] sm:p-[1vw] bg-[#F4F5F5] items-center flex justify-center"
+          >
             <p className="font-poppins break-words text-lg leading-[140%] text-[#616B66]">
               <span className="block">
                 <strong>Counseling & therapy</strong>
@@ -206,8 +336,17 @@ function LandingPage() {
                 and spiritual peace.
               </span>
             </p>
-          </div>
-          <div className="w-full h-full rounded-[16px] p-[4vw] sm:p-[1vw] bg-[#F4F5F5] items-center flex justify-center">
+          </motion.div>
+          <motion.div
+            whileHover={{
+              scale: 1.1,
+            }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+            }}
+            className="w-full h-full sm:rounded-[16px] p-[4vw] sm:p-[1vw] bg-[#F4F5F5] items-center flex justify-center"
+          >
             <p className="font-poppins break-words text-lg leading-[140%] text-[#616B66]">
               <span className="block">
                 <strong>Support</strong>
@@ -217,8 +356,17 @@ function LandingPage() {
                 their experiences, learn from others, and heal together.
               </span>
             </p>
-          </div>
-          <div className="w-full h-full rounded-[16px] p-[4vw] sm:p-[1vw] bg-[#F4F5F5] items-center flex justify-center">
+          </motion.div>
+          <motion.div
+            whileHover={{
+              scale: 1.1,
+            }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+            }}
+            className="w-full h-full sm:rounded-[16px] p-[4vw] sm:p-[1vw] bg-[#F4F5F5] items-center flex justify-center"
+          >
             <p className="font-poppins break-words text-lg leading-[140%] text-[#616B66]">
               <span className="block">
                 <strong>Faith & Wellness Integration</strong>
@@ -228,8 +376,17 @@ function LandingPage() {
                 to strengthen both the mind and spirit.
               </span>
             </p>
-          </div>
-          <div className="w-full h-full rounded-[16px] p-[4vw] sm:p-[1vw] bg-[#F4F5F5] items-center flex justify-center">
+          </motion.div>
+          <motion.div
+            whileHover={{
+              scale: 1.1,
+            }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+            }}
+            className="w-full h-full sm:rounded-[16px] p-[4vw] sm:p-[1vw] bg-[#F4F5F5] items-center flex justify-center"
+          >
             <p className="font-poppins break-words text-lg leading-[140%] text-[#616B66]">
               <span className="block">
                 <strong>Education & Awareness</strong>
@@ -240,24 +397,39 @@ function LandingPage() {
                 health.
               </span>
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
       <section
         id="testimonials"
-        className="flex w-full px-[1vw] sm:px-[1vw] mt-[10vw] lg:mt-[-3vw] lg:pt-[2vw] items-center justify-center rounded-[16px]"
+        className="flex w-full sm:px-[1vw] mt-[10vw] lg:mt-[-3vw] lg:pt-[2vw] items-center justify-center rounded-[16px]"
       >
-        <img
+        <motion.img
+          animate={{ rotate: [10, -10, 10] }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
           src={RightFlower}
           alt="picture"
-          className="lg:mt-[30vw] lg:w-[20vw] sm:mt-[10vw] mt-[110vw] z-10 w-[30%] mr-[-15%]"
+          className="lg:mt-[30vw] lg:w-[20vw] sm:mt-[10vw] mt-[110vw] z-10 w-[30%] mr-[-15%] sm:mr-[-18%]"
         />
-        <div className="py-[2vw] sm:p-[4vw] gap-[3vw] w-[60vw] flex justify-center items-center flex-col sm:w-[80vw] h-full rounded-[16px] bg-[#F5EBDD] lg:ml-[5vw]">
+        <motion.div
+          whileHover={{
+            scale: 1.1,
+          }}
+          transition={{
+            duration: 0.3,
+            ease: "easeInOut",
+          }}
+          className="py-[2vw] sm:p-[4vw] gap-[3vw] w-[60vw] flex justify-center items-center flex-col sm:w-[75vw] h-full rounded-[16px] bg-[#F5EBDD] lg:ml-[5vw]"
+        >
           <p className="font-poppins lg:text-4xl text-3xl font-semibold text-[#1D201E]">
             Testimonals
           </p>
           <div className="rounded-[16px] gap-[2vw] grid lg:grid-cols-2 grid-cols-1 w-[90%] lg:h-[180px]">
-            <div className="border-[#AFB6B2] h-full w-full rounded-[1px] flex justify-center items-center border-[1px] p-[2vw]">
+            <div className="border-[1px] border-[#AFB6B2] h-full w-full rounded-[16px] flex justify-center items-center border-[1px] p-[2vw]">
               <p className="text-lg font-poppins italic text-[#616B66] leading-[140%]">
                 ABCM gave me hope when I thought all was lost. The counseling
                 and faith-based support helped me rebuild my life with
@@ -272,42 +444,75 @@ function LandingPage() {
               </p>
             </div>
           </div>
-        </div>
-        <img
+        </motion.div>
+        <motion.img
+          animate={{ rotate: [-10, 10, -10] }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
           src={LeftFlower}
           alt="picture"
-          className="lg:mb-[30vw] lg:w-[20vw] sm:mb-[30%] mb-[110vw] z-10 w-[30%] sm:ml-[-10%] ml-[-12%]"
+          className="lg:mb-[30vw] lg:w-[20vw] sm:mb-[30%] mb-[110vw] z-10 w-[30%] sm:ml-[-12%] ml-[-12%]"
         />
       </section>
       <section
         id="get-support"
-        className="gap-[5vw] sm:gap-[3vw] grid px-[5vw] mt-[-7vw] pt-[7vw] justify-center items-center grid-cols-1 w-full"
+        className="gap-[5vw] sm:gap-[3vw] grid sm:px-[5vw] mt-[-7vw] pt-[7vw] justify-center items-center grid-cols-1 w-full"
       >
         <div className="lg:h-[81px] text-center gap-[1vw] flex justify-center items-center flex-col w-full">
           <span className="text-[#1D201E] font-poppins font-semibold text-3xl">
             Be part of a healing community
           </span>
-          <span className="text-[#616B66] sm:text-lg font-poppins leading-[140%]">
+          <span className="text-[#616B66] px-[2vw] sm:px-0 sm:text-lg font-poppins leading-[140%]">
             Your care and support help create safe spaces for healing, hope, and
             faith-guided wellness.
           </span>
         </div>
-        <div className="grid sm:grid-cols-3 text-[#616B66] grid-cols-1 gap-[2vw] w-full lg:h-[156px]">
-          <div className="bg-[#F4F5F5] w-full h-full rounded-[16px] p-[2vw] gap-[2vw]">
+        <div className="grid sm:grid-cols-3 text-[#616B66] grid-cols-1 gap-[2vw] w-full sm:text-start text-center lg:h-[156px]">
+          <motion.div
+            whileHover={{
+              scale: 1.1,
+            }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+            }}
+            className="bg-[#F4F5F5] w-full h-full sm:rounded-[16px] p-[2vw] gap-[2vw]"
+          >
             <span className="font-bold leading-[140%] text-lg">Donate</span>
             <span className="font-semi-bold block mt-2 leading-[140%] text-lg">
               Help fund counseling, support groups, and community programs that
               restore hope.
             </span>
-          </div>
-          <div className="bg-[#F4F5F5] w-full h-full rounded-[16px] p-[2vw] gap-[2vw]">
+          </motion.div>
+          <motion.div
+            whileHover={{
+              scale: 1.1,
+            }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+            }}
+            className="bg-[#F4F5F5] w-full h-full sm:rounded-[16px] p-[2vw] gap-[2vw]"
+          >
             <span className="font-bold leading-[140%] text-lg">Volunteer</span>
             <span className="font-semi-bold block mt-2 leading-[140%] text-lg">
               Offer your time, skills, and empathy to walk alongside those in
               need.
             </span>
-          </div>
-          <div className="bg-[#F4F5F5] w-full h-full rounded-[16px] p-[2vw] gap-[2vw]">
+          </motion.div>
+          <motion.div
+            whileHover={{
+              scale: 1.1,
+            }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+            }}
+            className="bg-[#F4F5F5] w-full h-full sm:rounded-[16px] p-[2vw] gap-[2vw]"
+          >
             <span className="font-bold leading-[140%] text-lg">
               Partner with us
             </span>
@@ -315,22 +520,38 @@ function LandingPage() {
               Collaborate with us to expand mental wellness support across
               communities.
             </span>
-          </div>
+          </motion.div>
         </div>
-        <div className="mx-auto lg:w-[200px] flex justify-center items-center h-auto p-[3vw] sm:p-[1vw] gap-[8px] rounded-[1000px] bg-[#5C9DF5]">
+        <motion.div
+          whileHover={{
+            scale: 1.1,
+          }}
+          transition={{
+            duration: 0.3,
+            ease: "easeInOut",
+          }}
+          className="mx-auto lg:w-[200px] flex justify-center items-center h-auto p-[3vw] sm:p-[1vw] gap-[8px] rounded-[1000px] bg-[#5C9DF5]"
+        >
           <Link
             to={"form"}
             className="font-poppins cursor-pointer font-semibold text-base font-[#1D201E]"
           >
             Join community
           </Link>
-        </div>
+        </motion.div>
       </section>
       <section
         id="resources"
         className="gap-[2vw] hidden w-full mt-[5vw] pt-[5vw] lg:grid lg:grid-cols-3 px-[10vw]"
       >
-        <div
+        <motion.div
+          whileHover={{
+            scale: 1.1,
+          }}
+          transition={{
+            duration: 0.3,
+            ease: "easeInOut",
+          }}
           className="py-[1vw] px-[2vw] w-full h-[30vw] rounded-[16px] 
                bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(20,20,20,1)_100%),url('/FirstPicture.jpg')] 
                bg-cover bg-center flex flex-col justify-end"
@@ -346,8 +567,15 @@ function LandingPage() {
               </p>
             </div>
           </div>
-        </div>
-        <div
+        </motion.div>
+        <motion.div
+          whileHover={{
+            scale: 1.1,
+          }}
+          transition={{
+            duration: 0.3,
+            ease: "easeInOut",
+          }}
           className="py-[1vw] px-[2vw] w-full h-full rounded-[16px] 
                bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(20,20,20,1)_100%),url('/SecondPicture.jpg')] 
                bg-cover bg-center flex flex-col justify-end"
@@ -362,8 +590,15 @@ function LandingPage() {
               </p>
             </div>
           </div>
-        </div>
-        <div
+        </motion.div>
+        <motion.div
+          whileHover={{
+            scale: 1.1,
+          }}
+          transition={{
+            duration: 0.3,
+            ease: "easeInOut",
+          }}
           className="py-[1vw] px-[2vw] w-full h-full rounded-[16px] 
                bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(20,20,20,1)_100%),url('/ThirdPicture.jpg')] 
                bg-cover bg-center flex flex-col justify-end"
@@ -378,7 +613,7 @@ function LandingPage() {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
       <section className="w-full mt-[10vw] lg:h-[500px] px-[10vw] lg:hidden">
         <div
@@ -422,24 +657,43 @@ function LandingPage() {
       </section>
       <section
         id="contact"
-        className="w-full mt-[0vw] py-[7vw] flex justify-center px-[5vw] lg:px-0 items-center flex-col"
+        className="w-full mt-[0vw] py-[7vw] flex justify-center sm:px-0 items-center flex-col"
       >
         <div className="h-full w-full grid grid-cols-1">
           <div className="flex justify-center">
-            <img
+            <motion.img
+              animate={{ x: [10, -10, 10] }}
+              transition={{
+                duration: 1,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
               alt="picture"
               src={SecondLeftLeave}
-              className="lg:w-[150px] h-[60px] w-[60px] lg:h-[150px] sm:mr-[1.5vw] mr-[2px]"
+              className="w-[10vw] sm:w-[10vw] sm:mr-[1.5vw] mr-[-10vw] relative z-10 sm:mt-0 mt-[78vw] h-[10vw] sm:mb-0"
             />
-            <img
+            <motion.img
+              whileHover={{
+                scale: 1.1,
+              }}
+              transition={{
+                duration: 0.3,
+                ease: "easeInOut",
+              }}
               alt="picture"
               src={"./LastPicture.jpg"}
-              className="w-[90vw] lg:w-full sm:w-[90%] h-[30vw] rounded-[16px] mr-[-1vw]"
+              className="w-full h-[80vw] lg:w-full sm:w-[90vw] sm:h-[30vw] sm:rounded-[16px] sm:mr-[-1vw]"
             />
-            <img
+            <motion.img
+              animate={{ x: [-10, 10, -10] }}
+              transition={{
+                duration: 1,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
               alt="picture"
               src={SecondRightLeave}
-              className="lg:w-[150px] h-[60px] w-[60px] lg:h-[150px] sm:w-[15vw] mt-[15vw] mr-[4vw]"
+              className="relative z-10 sm:mr-[4vw] w-[10vw] sm:w-[10vw] mt-[78vw] sm:mt-0 sm:mt-[15vw] sm:ml-0 ml-[-6vw] h-[10vw]"
             />
           </div>
           <div
@@ -454,7 +708,16 @@ function LandingPage() {
               partner with us, we’d love to hear from you.
             </p>
           </div>
-          <div className="m-auto lg:p-[1vw] w-full lg:w-[30vw] flex justify-center items-center lg:h-[465px]">
+          <motion.div
+            whileHover={{
+              scale: 1.1,
+            }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+            }}
+            className="m-auto lg:p-[1vw] sm:px-0 px-[5vw] w-full lg:w-[30vw] flex justify-center items-center"
+          >
             <form
               action="/submit"
               method="POST"
@@ -493,7 +756,7 @@ function LandingPage() {
                 Send message
               </button>
             </form>
-          </div>
+          </motion.div>
         </div>
       </section>
     </>
