@@ -98,7 +98,7 @@ function Footer() {
           <div className="flex lg:flex-row flex-col w-full justify-between">
             <div className="flex w-auto h-auto">
               <p className="font-poppins font-semibold text-[#6D6D6D] text-sm leading-[140%]">
-                © 2025 TABTech. All rights reserved
+                © 2025 ABCM. All rights reserved
               </p>
             </div>
             <div className="flex sm:justify-end w-auto h-auto">
