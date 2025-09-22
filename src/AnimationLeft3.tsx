@@ -5,7 +5,7 @@ type LeavesMotionProps = {
   src: string;
 };
 
-export default function LeavesMotionLeft({ src }: LeavesMotionProps) {
+export default function LeavesMotionLeft3({ src }: LeavesMotionProps) {
   const controls = useAnimation();
 
   useEffect(() => {
@@ -18,8 +18,8 @@ export default function LeavesMotionLeft({ src }: LeavesMotionProps) {
       });
 
       await controls.start({
-        x: "-8vw",
-        y: "-5vw",
+        x: "-5vw",
+        y: "3vw",
         rotate: 5,
         transition: { duration: 3, ease: "easeInOut" },
       });

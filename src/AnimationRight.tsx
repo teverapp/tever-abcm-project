@@ -2,23 +2,21 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 
 type LeavesMotionProps = {
-  src: string; // image path
+  src: string;
 };
 
-export default function LeavesMotion({ src }: LeavesMotionProps) {
+export default function LeavesMotionRight({ src }: LeavesMotionProps) {
   const controls = useAnimation();
 
   useEffect(() => {
     async function runAnimation() {
-      // First round: full back and forth
       await controls.start({
         x: ["40vw", "-40vw", "40vw"],
         y: [0, -5, 0],
         rotate: [0, 15, -15, 0],
-        transition: { duration: 10, ease: "easeInOut" },
+        transition: { duration: 15, ease: "easeInOut" },
       });
 
-      // Second round: stop somewhere in the MainImage
       await controls.start({
         x: "10vw",
         y: "10vw",
