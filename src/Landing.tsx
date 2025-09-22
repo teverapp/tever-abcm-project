@@ -2,8 +2,6 @@ import Leaves from "./assets/Leaves.svg";
 import LeaveLeft from "./assets/LeaveLeft.svg";
 import YellowFlower from "./assets/YellowFlower.svg";
 import PictureLogo from "./assets/PictureLogo.svg";
-import PeoplePicture from "./assets/PeoplePicture.svg";
-import MainImage from "./assets/MainImage.svg";
 import RightFlower from "./assets/RightFlower.svg";
 import LeftFlower from "./assets/LeftFlower.svg";
 import { useEffect, useState, useRef } from "react";
@@ -12,6 +10,8 @@ import SecondRightLeave from "./assets/SecondRightLeave.svg";
 import LeaveSection2a from "./assets/LeaveSection2a.svg";
 import LeaveSection2b from "./assets/LeaveSection2b.svg";
 import { motion } from "framer-motion";
+import LeavesMotionLeft from "./AnimationLeft";
+import LeavesMotionRight from "./AnimationRight";
 //import { useInView } from "react-intersection-observer";
 import { Link } from "react-scroll";
 function LandingPage() {
@@ -26,17 +26,17 @@ function LandingPage() {
     {
       text: "Downloadable guides, such as “Managing Stress & Anxiety with Faith”",
       btn: "Access guides",
-      bg: "./FirstPicture.jpg",
+      bg: "https://res.cloudinary.com/tever/image/upload/v1758527425/38ade1abef91d9d3b567d1ebde8d1b40317edd93_x1a68s.jpg",
     },
     {
       text: "Articles on mental health and Christian living",
       btn: "Read articles",
-      bg: "./SecondPicture.jpg",
+      bg: "https://res.cloudinary.com/tever/image/upload/v1758527424/1633efc85f627ffdc3f693d93c4e2fc7d2ff9f02_xyl4wr.jpg",
     },
     {
       text: "Information on helplines and crisis support services",
       btn: "Get support",
-      bg: "./ThirdPicture.jpg",
+      bg: "https://res.cloudinary.com/tever/image/upload/v1758527644/5ef36cb6aa55ef47267445f565bb8bc5654f0777_e6z4px.jpg",
     },
   ];
 
@@ -110,40 +110,24 @@ function LandingPage() {
           </motion.div>
         </div>
         <div className="flex justify-center items-center w-full relative">
-          <motion.img
-            src={LeaveLeft}
-            alt="photo"
-            className="w-[10vw] mt-[35vw] sm:mt-0 relative z-10 mr-[-15vw] sm:mr-[-1vw]"
-            animate={{ x: [-10, 10, -10] }}
-            transition={{
-              duration: 1,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.img
-            src={MainImage}
-            alt="photo"
-            className="w-full sm:w-[80vw] sm:rounded-[16px] sm:ml-[-2vw]"
-            whileHover={{
-              scale: 1.1,
-            }}
-            transition={{
-              duration: 0.3,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.img
-            src={Leaves}
-            alt="photo"
-            className="w-[10vw] ml-[-15vw] sm:ml-[-3vw] mt-[35vw] sm:mt-[10vw]"
-            animate={{ x: [10, -10, 10] }} // opposite direction for variety
-            transition={{
-              duration: 1,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
+          <LeavesMotionLeft src={LeaveLeft} />
+          <div className="w-full sm:w-[80vw] sm:rounded-[16px] sm:h-[30vw] h-[40vw] overflow-hidden sm:ml-[2vw]">
+            <motion.img
+              src={
+                "https://res.cloudinary.com/tever/image/upload/v1758527424/17d5feea9ee8016e000b555664cc1e5b81a290b8_fmijok.jpg"
+              }
+              alt="photo"
+              whileHover={{
+                scale: 1.1,
+              }}
+              className="w-full h-full object-cover object-center"
+              transition={{
+                duration: 0.3,
+                ease: "easeInOut",
+              }}
+            />
+          </div>
+          <LeavesMotionRight src={Leaves} />
         </div>
       </section>
       <section
@@ -212,7 +196,7 @@ function LandingPage() {
               duration: 0.3,
               ease: "easeInOut",
             }}
-            src={YellowFlower}
+            src="https://res.cloudinary.com/tever/image/upload/v1758527647/84a922c57899f7b3bf083115bbed3f5db06a8f8f_whgweb.jpg"
             className="w-full sm:hidden block h-full"
           />
           <motion.div
@@ -269,7 +253,7 @@ function LandingPage() {
       </section>
       <section
         id="programs"
-        className="grid grid-cols-1 sm:px-[5vw] sm:pt-[5vw] justify-center items-center w-full sm:gap-[3vw]"
+        className="grid grid-cols-1 sm:pt-[5vw] justify-center items-center w-full sm:gap-[3vw]"
       >
         <div className="flex justify-center items-center w-full ">
           <motion.img
@@ -281,20 +265,24 @@ function LandingPage() {
             }}
             src={LeaveSection2a}
             alt="photo"
-            className="w-[10vw] sm:w-[10%] z-10 relative sm:mb-0 sm:mr-[-5vw] mb-[50vw] mr-[-15vw]"
+            className="w-[10vw] sm:w-[10%] z-10 relative sm:mb-0 sm:mr-[-5vw] mb-[50vw] sm:ml-[1vw] mr-[-15vw]"
           />
-          <motion.img
-            src={PeoplePicture}
-            whileHover={{
-              scale: 1.1,
-            }}
-            transition={{
-              duration: 0.3,
-              ease: "easeInOut",
-            }}
-            alt="photo"
-            className="w-full sm:w-[85%] sm:rounded-[16px] border-radius-1 sm:ml-[4vw] ml-[2vw]"
-          />
+          <div className="sm:h-[30vw] w-full overflow-hidden sm:w-[85%] sm:rounded-[16px] border-radius-1 sm:ml-[4vw] sm:mr-[-8vw] ml-[2vw]">
+            <motion.img
+              src={
+                "https://res.cloudinary.com/tever/image/upload/v1758527436/d0442878528607e48793fb8ebcbbf9886ae7874e_2_lixvgv.jpg"
+              }
+              whileHover={{
+                scale: 1.1,
+              }}
+              transition={{
+                duration: 0.3,
+                ease: "easeInOut",
+              }}
+              alt="photo"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
           <motion.img
             animate={{ x: [-10, 10, -10] }}
             transition={{
@@ -304,10 +292,10 @@ function LandingPage() {
             }}
             src={LeaveSection2b}
             alt="photo"
-            className="w-[7vw] sm:w-[10%] z-10 relative mt-[45vw] sm:mt-[10vw] sm:ml-0 ml-[-11vw] sm:mr-[5vw]"
+            className="w-[7vw] sm:w-[10%] z-10 relative mt-[45vw] sm:mt-[10vw] sm:ml-[5vw] ml-[-11vw] sm:mr-[5vw]"
           />
         </div>
-        <div className="flex flex-col justify-center pb-[5vw] sm:pb-0 sm:px-0 px-[2vw] text-center items-center w-full lg:h-[81px] gap-[1vw]">
+        <div className="flex flex-col justify-center pb-[5vw] sm:pb-0 sm:px-[10vw] px-[2vw] text-center items-center w-full lg:h-[81px] gap-[1vw]">
           <p className="font-poppins font-semibold text-3xl text-[#1D201E]">
             What we do
           </p>
@@ -315,7 +303,7 @@ function LandingPage() {
             We provide care that is holistic, compassionate, and faith-centered
           </p>
         </div>
-        <div className="grid grid-cols-1 text-center sm:text-start lg:grid-cols-2 w-full lg:h-[332px] gap-[2vw] sm:gap-[3vw]">
+        <div className="grid grid-cols-1 text-center sm:text-start lg:grid-cols-2 w-full lg:h-[332px] gap-[2vw] sm:px-[10vw] sm:gap-[3vw]">
           <motion.div
             whileHover={{
               scale: 1.1,
@@ -553,7 +541,7 @@ function LandingPage() {
             ease: "easeInOut",
           }}
           className="py-[1vw] px-[2vw] w-full h-[30vw] rounded-[16px] 
-               bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(20,20,20,1)_100%),url('/FirstPicture.jpg')] 
+               bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(20,20,20,1)_100%),url('https://res.cloudinary.com/tever/image/upload/v1758527425/38ade1abef91d9d3b567d1ebde8d1b40317edd93_x1a68s.jpg')] 
                bg-cover bg-center flex flex-col justify-end"
         >
           <div className="flex z-10 flex-col gap-[1vw] w-full h-fit ">
@@ -577,7 +565,7 @@ function LandingPage() {
             ease: "easeInOut",
           }}
           className="py-[1vw] px-[2vw] w-full h-full rounded-[16px] 
-               bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(20,20,20,1)_100%),url('/SecondPicture.jpg')] 
+               bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(20,20,20,1)_100%),url('https://res.cloudinary.com/tever/image/upload/v1758527424/1633efc85f627ffdc3f693d93c4e2fc7d2ff9f02_xyl4wr.jpg')] 
                bg-cover bg-center flex flex-col justify-end"
         >
           <div className="flex z-10 flex-col gap-[1vw] w-full h-fit ">
@@ -600,7 +588,7 @@ function LandingPage() {
             ease: "easeInOut",
           }}
           className="py-[1vw] px-[2vw] w-full h-full rounded-[16px] 
-               bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(20,20,20,1)_100%),url('/ThirdPicture.jpg')] 
+               bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(20,20,20,1)_100%),url('https://res.cloudinary.com/tever/image/upload/v1758527644/5ef36cb6aa55ef47267445f565bb8bc5654f0777_e6z4px.jpg')] 
                bg-cover bg-center flex flex-col justify-end"
         >
           <div className="flex z-10 flex-col gap-[1vw] w-full h-fit ">
@@ -681,8 +669,10 @@ function LandingPage() {
                 ease: "easeInOut",
               }}
               alt="picture"
-              src={"./LastPicture.jpg"}
-              className="w-full h-[80vw] lg:w-full sm:w-[90vw] sm:h-[30vw] sm:rounded-[16px] sm:mr-[-1vw]"
+              src={
+                "https://res.cloudinary.com/tever/image/upload/v1758527432/69691d4d3fc475cecd1103990f502eee9d311a51_cklpq7.jpg"
+              }
+              className="w-full h-[80vw] lg:w-full sm:w-[90vw] sm:h-[35vw] sm:rounded-[16px] sm:mr-[-1vw]"
             />
             <motion.img
               animate={{ x: [-10, 10, -10] }}
