@@ -403,7 +403,7 @@ function LandingPage() {
           <p className="font-poppins lg:text-4xl text-3xl font-semibold text-[#1D201E]">
             Testimonals
           </p>
-          <div className="rounded-[16px] gap-[2vw] grid lg:grid-cols-2 grid-cols-1 w-[90%] lg:h-[180px]">
+          <div className="text-center sm:text-start rounded-[16px] gap-[2vw] grid lg:grid-cols-2 grid-cols-1 w-[90%] lg:h-[180px]">
             <div className="border-[1px] border-[#AFB6B2] h-full w-full rounded-[16px] flex justify-center items-center border-[1px] p-[2vw]">
               <p className="text-lg font-poppins italic text-[#616B66] leading-[140%]">
                 ABCM gave me hope when I thought all was lost. The counseling
@@ -650,7 +650,7 @@ function LandingPage() {
               src={
                 "https://res.cloudinary.com/tever/image/upload/v1758527432/69691d4d3fc475cecd1103990f502eee9d311a51_cklpq7.jpg"
               }
-              className="w-full h-[80vw] lg:w-full sm:w-[90vw] sm:h-[35vw] sm:rounded-[16px] sm:mr-[10vw] sm:ml-[10vw]"
+              className="w-full h-[70vw] lg:w-full sm:w-[90vw] sm:h-[35vw] sm:rounded-[16px] sm:mr-[10vw] sm:ml-[10vw]"
             />
             <LeavesMotionRight3 src={SecondRightLeave} />
             {/*className="relative z-10 sm:mr-[4vw] w-[10vw] sm:w-[10vw] mt-[78vw] sm:mt-0 sm:mt-[15vw] sm:ml-0 ml-[-6vw] h-[10vw]"*/}
