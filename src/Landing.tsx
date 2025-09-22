@@ -11,7 +11,12 @@ import LeaveSection2a from "./assets/LeaveSection2a.svg";
 import LeaveSection2b from "./assets/LeaveSection2b.svg";
 import { motion } from "framer-motion";
 import LeavesMotionLeft from "./AnimationLeft";
+import LeavesMotionRight2 from "./AnimationRight2";
+import LeavesMotionLeft2 from "./AnimationLeft2";
 import LeavesMotionRight from "./AnimationRight";
+import LeavesMotionLeft3 from "./AnimationLeft3";
+import LeavesMotionRight3 from "./AnimationRight3";
+
 //import { useInView } from "react-intersection-observer";
 import { Link } from "react-scroll";
 function LandingPage() {
@@ -136,6 +141,13 @@ function LandingPage() {
       >
         <div className="gap-[2vw] sm:gap-[3vw] grid sm:grid-cols-2 justify-center items-center w-full">
           <motion.img
+            whileHover={{
+              scale: 1.1,
+            }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+            }}
             alt="picture"
             src={PictureLogo}
             className="h-full w-full"
@@ -150,20 +162,11 @@ function LandingPage() {
             }}
             className="grid grid-cols-1 text-center sm:text-start justify-center w-full h-full items-center py-[4vw]"
           >
-            <motion.div
-              whileHover={{
-                scale: 1.1,
-              }}
-              transition={{
-                duration: 0.3,
-                ease: "easeInOut",
-              }}
-              className="w-full h-auto"
-            >
+            <div>
               <p className="text-[#1D201E] w-full font-poppins font-semibold text-3xl">
                 Who we are
               </p>
-            </motion.div>
+            </div>
             <div className="grid grid-cols-1 justify-center sm:py-0 py-[2vw] items-center gap-[1vw]">
               <p className="w-full font-poppins leading-[140%] text-[#616B66] text-sm sm:text-lg">
                 A Beautiful and Clear Mind (ABCM) Foundation is a faith-
@@ -256,18 +259,10 @@ function LandingPage() {
         className="grid grid-cols-1 sm:pt-[5vw] justify-center items-center w-full sm:gap-[3vw]"
       >
         <div className="flex justify-center items-center w-full ">
-          <motion.img
-            animate={{ x: [10, -10, 10] }}
-            transition={{
-              duration: 1,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            src={LeaveSection2a}
-            alt="photo"
-            className="w-[10vw] sm:w-[10%] z-10 relative sm:mb-0 sm:mr-[-5vw] mb-[50vw] sm:ml-[1vw] mr-[-15vw]"
-          />
-          <div className="sm:h-[30vw] w-full overflow-hidden sm:w-[85%] sm:rounded-[16px] border-radius-1 sm:ml-[4vw] sm:mr-[-8vw] ml-[2vw]">
+          <LeavesMotionLeft2 src={LeaveSection2a} />
+          {/*alt="photo"
+            className="w-[10vw] sm:w-[10%] z-10 relative sm:mb-0 sm:mr-[-5vw] mb-[50vw] sm:ml-[1vw] mr-[-15vw]*/}
+          <div className="sm:h-[30vw] w-full overflow-hidden sm:w-[85%] sm:rounded-[16px] border-radius-1 sm:mr-[10vw] sm:ml-[10vw] ml-[2vw]">
             <motion.img
               src={
                 "https://res.cloudinary.com/tever/image/upload/v1758527436/d0442878528607e48793fb8ebcbbf9886ae7874e_2_lixvgv.jpg"
@@ -283,17 +278,9 @@ function LandingPage() {
               className="w-full h-full object-cover object-center"
             />
           </div>
-          <motion.img
-            animate={{ x: [-10, 10, -10] }}
-            transition={{
-              duration: 1,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            src={LeaveSection2b}
-            alt="photo"
-            className="w-[7vw] sm:w-[10%] z-10 relative mt-[45vw] sm:mt-[10vw] sm:ml-[5vw] ml-[-11vw] sm:mr-[5vw]"
-          />
+          <LeavesMotionRight2 src={LeaveSection2b} />
+          {/*alt="photo"
+            className="w-[7vw] sm:w-[10%] z-10 relative mt-[45vw] sm:mt-[10vw] sm:ml-[5vw] ml-[-11vw] sm:mr-[5vw]"*/}
         </div>
         <div className="flex flex-col justify-center pb-[5vw] sm:pb-0 sm:px-[10vw] px-[2vw] text-center items-center w-full lg:h-[81px] gap-[1vw]">
           <p className="font-poppins font-semibold text-3xl text-[#1D201E]">
@@ -447,7 +434,7 @@ function LandingPage() {
       </section>
       <section
         id="get-support"
-        className="gap-[5vw] sm:gap-[3vw] grid sm:px-[5vw] mt-[-7vw] pt-[7vw] justify-center items-center grid-cols-1 w-full"
+        className="gap-[5vw] sm:gap-[3vw] grid sm:px-[10vw] mt-[-7vw] pt-[7vw] justify-center items-center grid-cols-1 w-full"
       >
         <div className="lg:h-[81px] text-center gap-[1vw] flex justify-center items-center flex-col w-full">
           <span className="text-[#1D201E] font-poppins font-semibold text-3xl">
@@ -649,17 +636,8 @@ function LandingPage() {
       >
         <div className="h-full w-full grid grid-cols-1">
           <div className="flex justify-center">
-            <motion.img
-              animate={{ x: [10, -10, 10] }}
-              transition={{
-                duration: 1,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              alt="picture"
-              src={SecondLeftLeave}
-              className="w-[10vw] sm:w-[10vw] sm:mr-[1.5vw] mr-[-10vw] relative z-10 sm:mt-0 mt-[78vw] h-[10vw] sm:mb-0"
-            />
+            <LeavesMotionLeft3 src={SecondLeftLeave} />
+            {/*className="w-[10vw] sm:w-[10vw] sm:mr-[1.5vw] mr-[-10vw] relative z-10 sm:mt-0 mt-[78vw] h-[10vw] sm:mb-0"*/}
             <motion.img
               whileHover={{
                 scale: 1.1,
@@ -672,19 +650,10 @@ function LandingPage() {
               src={
                 "https://res.cloudinary.com/tever/image/upload/v1758527432/69691d4d3fc475cecd1103990f502eee9d311a51_cklpq7.jpg"
               }
-              className="w-full h-[80vw] lg:w-full sm:w-[90vw] sm:h-[35vw] sm:rounded-[16px] sm:mr-[-1vw]"
+              className="w-full h-[80vw] lg:w-full sm:w-[90vw] sm:h-[35vw] sm:rounded-[16px] sm:mr-[10vw] sm:ml-[10vw]"
             />
-            <motion.img
-              animate={{ x: [-10, 10, -10] }}
-              transition={{
-                duration: 1,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              alt="picture"
-              src={SecondRightLeave}
-              className="relative z-10 sm:mr-[4vw] w-[10vw] sm:w-[10vw] mt-[78vw] sm:mt-0 sm:mt-[15vw] sm:ml-0 ml-[-6vw] h-[10vw]"
-            />
+            <LeavesMotionRight3 src={SecondRightLeave} />
+            {/*className="relative z-10 sm:mr-[4vw] w-[10vw] sm:w-[10vw] mt-[78vw] sm:mt-0 sm:mt-[15vw] sm:ml-0 ml-[-6vw] h-[10vw]"*/}
           </div>
           <div
             id="form"
