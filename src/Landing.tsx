@@ -377,7 +377,7 @@ function LandingPage() {
       </section>
       <section
         id="testimonials"
-        className="flex w-full sm:px-[1vw] mt-[10vw] lg:mt-[-3vw] lg:pt-[2vw] items-center justify-center rounded-[16px]"
+        className="flex w-full sm:px-[1vw] mt-[10vw] sm:mt-[-3vw] sm:pt-[2vw] items-center justify-center rounded-[16px]"
       >
         <motion.img
           animate={{ rotate: [10, -10, 10] }}
@@ -388,7 +388,7 @@ function LandingPage() {
           }}
           src={RightFlower}
           alt="picture"
-          className="lg:mt-[30vw] lg:w-[20vw] sm:mt-[10vw] mt-[110vw] z-10 w-[30%] mr-[-15%] sm:mr-[-18%]"
+          className="sm:mt-[30vw] sm:w-[20vw] mt-[110vw] z-10 w-[30%] mr-[-15%] sm:mr-[-18%]"
         />
         <motion.div
           whileHover={{
@@ -398,12 +398,12 @@ function LandingPage() {
             duration: 0.3,
             ease: "easeInOut",
           }}
-          className="py-[2vw] sm:p-[4vw] gap-[3vw] w-[60vw] flex justify-center items-center flex-col sm:w-[75vw] h-full rounded-[16px] bg-[#F5EBDD] lg:ml-[5vw]"
+          className="py-[2vw] sm:p-[4vw] gap-[3vw] w-[60vw] flex justify-center items-center flex-col sm:w-[75vw] h-full rounded-[16px] bg-[#F5EBDD] sm:ml-[5vw]"
         >
-          <p className="font-poppins lg:text-4xl text-3xl font-semibold text-[#1D201E]">
+          <p className="font-poppins sm:text-4xl text-3xl font-semibold text-[#1D201E]">
             Testimonals
           </p>
-          <div className="text-center sm:text-start rounded-[16px] gap-[2vw] grid lg:grid-cols-2 grid-cols-1 w-[90%] lg:h-[180px]">
+          <div className="text-center sm:text-start rounded-[16px] gap-[2vw] grid sm:grid-cols-2 grid-cols-1 w-[90%]">
             <div className="border-[1px] border-[#AFB6B2] h-full w-full rounded-[16px] flex justify-center items-center border-[1px] p-[2vw]">
               <p className="text-lg font-poppins italic text-[#616B66] leading-[140%]">
                 ABCM gave me hope when I thought all was lost. The counseling
