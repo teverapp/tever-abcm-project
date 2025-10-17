@@ -1,7 +1,5 @@
 import Leaves from "./assets/Leaves.svg";
 import LeaveLeft from "./assets/LeaveLeft.svg";
-import YellowFlower from "./assets/YellowFlower.svg";
-import PictureLogo from "./assets/PictureLogo.svg";
 import RightFlower from "./assets/RightFlower.svg";
 import LeftFlower from "./assets/LeftFlower.svg";
 import { useEffect, useState, useRef } from "react";
@@ -149,8 +147,10 @@ function LandingPage() {
               ease: "easeInOut",
             }}
             alt="picture"
-            src={PictureLogo}
-            className="h-full w-full"
+            src={
+              "https://res.cloudinary.com/tever/image/upload/v1760699978/PictureLogo-CfxISeQ__pc4igu.svg"
+            }
+            className="h-full w-full lg:rounded-xl"
           />
           <motion.div
             whileHover={{
@@ -162,7 +162,7 @@ function LandingPage() {
             }}
             className="grid grid-cols-1 text-center sm:text-start justify-center w-full h-full items-center py-[4vw]"
           >
-            <div>
+            <div className="w-full h-auto">
               <p className="text-[#1D201E] w-full font-poppins font-semibold text-3xl">
                 Who we are
               </p>
@@ -249,8 +249,10 @@ function LandingPage() {
               duration: 0.3,
               ease: "easeInOut",
             }}
-            src={YellowFlower}
-            className="w-full sm:flex hidden h-full"
+            src={
+              "https://res.cloudinary.com/tever/image/upload/v1758527647/84a922c57899f7b3bf083115bbed3f5db06a8f8f_whgweb.jpg"
+            }
+            className="w-full rounded-xl sm:flex hidden lg:h-[31vw]"
           />
         </div>
       </section>
